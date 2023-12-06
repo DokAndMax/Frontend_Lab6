@@ -1,16 +1,32 @@
 body {
-    background: grey;
+    background-color: grey;
 }
 
 button {
-    background: darkolivegreen;
-    color: ghostwhite;
-    border-radius: 15%;
     padding: 8px 20px;
-    display: block;
+    border-radius: 15%;
+    background-color: #383c44;
+    color: ghostwhite;
 }
 
 #download-cards {
-    margin: auto;
+    display: block;
+    margin: 20px auto;
 }
 
+#card-list {
+    display: flex;
+    flex-wrap: wrap;
+    color: ghostwhite;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: calc((100%/5));
+    background-color: #383c44;
+}
+
+.card-field {
+    margin: 20px 10px;
+}

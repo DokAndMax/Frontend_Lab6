@@ -69,8 +69,23 @@ function createCardField(label, value) {
 function getNestedValue(obj, path) {
     let keys = path.split(".");
     let value = obj;
-    for (let key of keys) {
+    for (const key of keys) {
         value = value[key];
     }
+
+    if (typeof value === "object") {
+        value = flatten(value).join(", ");
+    }
+
     return value;
+}
+
+function flatten(value) {
+    if (Array.isArray(value)) {
+        return value.flatMap(flatten);
+    } else if (typeof value === "object") {
+        return flatten(Object.values(value));
+    } else {
+        return [value];
+    }
 }
