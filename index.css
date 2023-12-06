@@ -1,0 +1,16 @@
+body {
+    background: grey;
+}
+
+button {
+    background: darkolivegreen;
+    color: ghostwhite;
+    border-radius: 15%;
+    padding: 8px 20px;
+    display: block;
+}
+
+#download-cards {
+    margin: auto;
+}
+
