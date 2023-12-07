@@ -15,7 +15,7 @@ async function OnClickDownloadCards(event) {
 
     const loader = document.createElement("div");
     loader.className = "loader";
-    container.appendChild(loader);
+    container.after(loader);
 
     const CARDS_API_URI = "https://randomuser.me/api";
     const CARDS_COUNT = "5";
