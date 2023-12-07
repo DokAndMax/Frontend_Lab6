@@ -11,6 +11,12 @@ const downloadCardsButton = document.getElementById("download-cards");
 downloadCardsButton.addEventListener("click", OnClickDownloadCards)
 
 async function OnClickDownloadCards(event) {
+    const container = document.getElementById("card-list");
+
+    const loader = document.createElement("div");
+    loader.className = "loader";
+    container.appendChild(loader);
+
     const CARDS_API_URI = "https://randomuser.me/api";
     const CARDS_COUNT = "5";
 
@@ -21,7 +27,7 @@ async function OnClickDownloadCards(event) {
     const responseJSON = await response.json();
     const cardsData = responseJSON.results;
 
-    const container = document.getElementById("card-list");
+    loader.remove();
 
     for (let data of cardsData) {
         let card = generateCard(data);
